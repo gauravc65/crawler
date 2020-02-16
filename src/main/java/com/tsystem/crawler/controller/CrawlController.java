@@ -18,7 +18,7 @@ public class CrawlController {
     private CrawlService crawlService;
 
     @GetMapping(value = "/crawl")
-    public ResponseEntity<CrawlDetail> crawlURI(@RequestParam String url, @RequestParam Integer depth) {
+    public ResponseEntity<CrawlDetail> crawlURI(@RequestParam String url) {
         CrawlDetail crawlDetail = crawlService.search(url);
         return new ResponseEntity<CrawlDetail>(crawlDetail, HttpStatus.OK);
     }
